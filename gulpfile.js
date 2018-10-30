@@ -1215,7 +1215,7 @@ function buildSandcastle() {
         })
         .pipe(gulp.dest('Build/Apps/Sandcastle'));
 
-    return eventStream.merge(appStream, imageStream);
+    return streamToPromise(eventStream.merge(appStream, imageStream));
 }
 
 function buildCesiumViewer() {
